@@ -6,6 +6,7 @@ from ma import ma
 from db import db
 from resources.user import UserRegister, UserLogin, UserLogout
 from resources.homepage import Homepage
+from resources.car import Car, CarList
 from blacklist import BLACKLIST
 
 
@@ -66,6 +67,9 @@ api.add_resource(Homepage, '/')
 api.add_resource(UserRegister, '/register')
 api.add_resource(UserLogin, '/login')
 api.add_resource(UserLogout, '/logout')
+
+api.add_resource(Car, "/car/<string:carname>")
+api.add_resource(CarList, "/cars")
 
 if __name__ == "__main__":
     db.init_app(app)
