@@ -33,7 +33,8 @@ class UserRegister(Resource):
             return err.messages, 400
 
         if UserModel.find_by_username(user.username):
-            return {"message": USER_ALREADY_EXISTS}, 400
+            #return {"message": USER_ALREADY_EXISTS}, 400
+            return {"data": {"message": USER_ALREADY_EXISTS}, "status": 222}, 400
 
         user.save_to_db()
 
