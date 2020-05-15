@@ -48,13 +48,3 @@ class CarList(Resource):
     @classmethod
     def get(cls):
         return {"cars": car_list_schema.dump(CarModel.find_all())}, 200
-
-class ConvertedCarModel(Resource):
-    @classmethod
-    def get(cls, engineCode: str):
-        return {
-                "Result": 1,
-                "MakerName": "マッダ",
-                "MakerCode": "13",
-                "CarName": "アテンザワゴン"
-            }

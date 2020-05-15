@@ -6,7 +6,7 @@ from ma import ma
 from db import db
 from resources.user import UserRegister, UserLogin, UserLogout
 from resources.homepage import Homepage
-from resources.car import Car, CarList, ConvertedCarModel
+from resources.car import Car, CarList
 from blacklist import BLACKLIST
 
 
@@ -70,9 +70,6 @@ api.add_resource(UserLogout, '/logout')
 
 api.add_resource(Car, "/car/<string:carname>")
 api.add_resource(CarList, "/cars")
-
-# Test
-api.add_resource(ConvertedCarModel, '/QRCODE/QRCode_GetMakerAndCarname/<string:engineCode>')
 
 if __name__ == "__main__":
     db.init_app(app)
